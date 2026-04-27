@@ -9,7 +9,7 @@ function App() {
 
   // ADD ITEM
   const addItem = async () => {
-    await axios.post("http://localhost:5000/api/items", {
+    await axios.post("https://mern-item-manager-mxz6.onrender.com/api/items", {
       name,
       quantity,
       price,
@@ -22,13 +22,13 @@ function App() {
 
   // DELETE ITEM
   const deleteItem = async (id) => {
-    await axios.delete(`http://localhost:5000/api/items/${id}`);
+    await axios.delete(`https://mern-item-manager-mxz6.onrender.com/api/items/${id}`);
     getItems();
   };
 
   // GET ITEMS
   const getItems = async () => {
-    const res = await axios.get("http://localhost:5000/api/items");
+    const res = await axios.get("https://mern-item-manager-mxz6.onrender.com/api/items");
     setItems(res.data);
   };
 
