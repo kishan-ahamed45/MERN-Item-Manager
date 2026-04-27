@@ -9,9 +9,11 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  dbName: "itemmanager"
+})
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.log("MongoDB Error:", err.message));
 
 // Model
 const Item = mongoose.model("Item", {
